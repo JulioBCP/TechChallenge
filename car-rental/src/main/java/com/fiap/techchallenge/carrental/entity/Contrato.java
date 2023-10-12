@@ -1,21 +1,33 @@
 package com.fiap.techchallenge.carrental.entity;
 
-import java.time.LocalDate;
-
 import lombok.Setter;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 import lombok.Getter;
 
 @Getter
 @Setter
+
+@Entity
+@Table(name = "contrato")
 public class Contrato {
 
-   private int numeroApolice;
-   private Cliente cliente;
-   private Veiculo veiculo;
-   private LocalDate dataInicio;
-   private LocalDate dataFim;
+   @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
+   private long numeroApolice;
+
+   @Enumerated(EnumType.STRING)
    private FormaDePagamentoEnum formaPagamento;
-   private Double valorContrato;
+
    private Double multaDiaria;
+
+   @OneToOne
+   private Reserva reserva;
 
 }
