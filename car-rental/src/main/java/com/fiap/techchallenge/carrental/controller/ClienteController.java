@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.service.annotation.DeleteExchange;
-import org.springframework.web.service.annotation.PutExchange;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.fiap.techchallenge.carrental.DTO.AtualizaClienteDTO;
@@ -46,7 +44,7 @@ public class ClienteController {
     }
 
     @DeleteMapping("/{numeroCnh}")
-    public ResponseEntity deletarCliente(@PathVariable long numeroCnh) {
+    public ResponseEntity<Cliente> deletarCliente(@PathVariable long numeroCnh) {
         return ResponseEntity.noContent().build();
     }
 }
