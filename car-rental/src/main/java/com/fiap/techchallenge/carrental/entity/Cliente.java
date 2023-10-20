@@ -7,8 +7,6 @@ import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -22,7 +20,7 @@ import lombok.Setter;
 public class Cliente {
 
    @Id
-   //@GeneratedValue(strategy = GenerationType.IDENTITY)
+   @Column(unique = true)
    private long numeroCnh;
 
    @Column(nullable = false)
@@ -31,7 +29,7 @@ public class Cliente {
    @Enumerated(EnumType.STRING)
    private SexoEnum sexo;   
 
-   @Column(nullable = false)
+   @Column(nullable = false, unique = true)
    private int CPF;
 
    @Embedded

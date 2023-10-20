@@ -4,6 +4,9 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,8 +16,12 @@ import lombok.Setter;
 @Embeddable
 public class Usuario {
    
-   @Column(nullable = false)
-   private String usuario;
+   @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
+   private long id;
+
+   @Column(nullable = false, unique = true)
+   private String login;
 
    @Column(nullable = false)
    private String senha;
