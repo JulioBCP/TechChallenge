@@ -2,7 +2,10 @@ package com.fiap.techchallenge.carrental.controller;
 
 import java.net.URI;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +27,7 @@ public class ClienteController {
     
     @Autowired
     CadastroClienteService clienteService;
+    private static final Logger LOGGER = LoggerFactory.getLogger(ClienteController.class);    
 
     @PostMapping
     public ResponseEntity<Cliente> inserirCliente(@RequestBody Cliente cliente, UriComponentsBuilder builder) {
@@ -44,7 +48,14 @@ public class ClienteController {
     }
 
     @DeleteMapping("/{numeroCnh}")
-    public ResponseEntity<Cliente> deletarCliente(@PathVariable long numeroCnh) {
-        return ResponseEntity.noContent().build();
+    public ResponseEntity<String> deletarCliente(@PathVariable long numeroCnh) {
+        try{
+            clienteService.deletarCliente(numeroCnh);
+            LOGGER.info("Cliente {} eliminado com sucesso!", numeroCnh);
+        } catch(Exception e){
+            LOGGER.error("Não foi possível eliminar o cliente {}!", numeroCnh);
+            return new ResponseEntity<>("Não foi possível eliminar o cliente!", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return new ResponseEntity<>("Cliente eliminado com sucesso!", HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }

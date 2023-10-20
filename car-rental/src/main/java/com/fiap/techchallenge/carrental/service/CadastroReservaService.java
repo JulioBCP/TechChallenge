@@ -27,12 +27,16 @@ public class CadastroReservaService {
     //update
     public Reserva alterarReserva(AtualizaReservaDTO atualizaReserva, long id) {
         Reserva reserva = reservaRepository.getReferenceById(id);
+        reserva.setVeiculo(atualizaReserva.veiculo());
+        reserva.setValorContrato(atualizaReserva.valorContrato());
+        reserva.setDataInicio(atualizaReserva.dataInicio());
+        reserva.setDataFim(atualizaReserva.dataFim());      
 
         return reservaRepository.save(reserva);  
     }
 
     //delete
-    public void deletarReserva(long numeroApolice) {
-        reservaRepository.deleteById(numeroApolice);
+    public void deletarReserva(long id) {
+        reservaRepository.deleteById(id);
     }
 }

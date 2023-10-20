@@ -20,7 +20,7 @@ import lombok.Setter;
 public class Cliente {
 
    @Id
-   //@GeneratedValue(strategy = GenerationType.IDENTITY)
+   @Column(unique = true)
    private long numeroCnh;
 
    @Column(nullable = false)
@@ -29,7 +29,7 @@ public class Cliente {
    @Enumerated(EnumType.STRING)
    private SexoEnum sexo;   
 
-   @Column(nullable = false)
+   @Column(nullable = false, unique = true)
    private int CPF;
 
    @Embedded

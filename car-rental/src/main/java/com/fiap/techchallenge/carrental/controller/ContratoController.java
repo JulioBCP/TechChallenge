@@ -2,7 +2,10 @@ package com.fiap.techchallenge.carrental.controller;
 
 import java.net.URI;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,11 +24,12 @@ import com.fiap.techchallenge.carrental.service.CadastroContratoService;
 public class ContratoController {
     
     @Autowired
-    CadastroContratoService ContratoService;
+    CadastroContratoService contratoService;
+    private static final Logger LOGGER = LoggerFactory.getLogger(ContratoController.class);    
 
     @PostMapping
     public ResponseEntity<Contrato> inserirContrato(@RequestBody Contrato Contrato, UriComponentsBuilder builder) {
-        ContratoService.inserirContrato(Contrato);
+        contratoService.inserirContrato(Contrato);
         
         URI location = builder.path("Contratos/{numeroApolice}").buildAndExpand(Contrato.getNumeroApolice()).toUri();        
         return ResponseEntity.created(location).body(Contrato);       
@@ -33,7 +37,7 @@ public class ContratoController {
 
     @GetMapping("/{numeroApolice}")
     public ResponseEntity<Contrato> buscarContrato(@PathVariable long numeroApolice) {
-        return ResponseEntity.ok().body(ContratoService.encontrarContrato(numeroApolice));
+        return ResponseEntity.ok().body(contratoService.encontrarContrato(numeroApolice));
     }
 
     // @PutMapping("/{numeroApolice}")
@@ -42,7 +46,14 @@ public class ContratoController {
     // }
 
     @DeleteMapping("/{numeroApolice}")
-    public ResponseEntity<Contrato> deletarContrato(@PathVariable long numeroApolice) {
-        return ResponseEntity.noContent().build();
+    public ResponseEntity<String> deletarContrato(@PathVariable long numeroApolice) {
+        try{
+            contratoService.deletarContrato(numeroApolice);
+            LOGGER.info("Contrato {} eliminado com sucesso!", numeroApolice);
+        } catch(Exception e){
+            LOGGER.error("Não foi possível eliminar o contrato {}!", numeroApolice);
+            return new ResponseEntity<>("Não foi possível eliminar o contrato!", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return new ResponseEntity<>("Contrato eliminado com sucesso!", HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }

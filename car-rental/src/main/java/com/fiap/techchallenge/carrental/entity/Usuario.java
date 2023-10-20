@@ -20,8 +20,8 @@ public class Usuario {
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private long id;
 
-   @Column(nullable = false)
-   private String usuario;
+   @Column(nullable = false, unique = true)
+   private String login;
 
    @Column(nullable = false)
    private String senha;

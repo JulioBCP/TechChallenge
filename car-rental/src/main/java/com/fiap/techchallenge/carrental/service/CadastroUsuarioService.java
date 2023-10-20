@@ -28,7 +28,7 @@ public class CadastroUsuarioService {
     public Usuario alterarUsuario(AtualizaUsuarioDTO atualizaUsuario, long id) {
         Usuario usuario = usuarioRepository.getReferenceById(id);
         usuario.setSenha(atualizaUsuario.senha());
-        usuario.setTipoUsuario(atualizaUsuario.tipoUsuario());
+        usuario.setLogin(atualizaUsuario.login());
 
         return usuarioRepository.save(usuario);
     }

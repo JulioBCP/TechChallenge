@@ -2,7 +2,10 @@ package com.fiap.techchallenge.carrental.controller;
 
 import java.net.URI;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +27,7 @@ public class VeiculoController {
     
     @Autowired
     CadastroVeiculoService veiculoService;
+    private static final Logger LOGGER = LoggerFactory.getLogger(VeiculoController.class);    
 
     @PostMapping
     public ResponseEntity<Veiculo> inserirVeiculo(@RequestBody Veiculo veiculo, UriComponentsBuilder builder) {
@@ -44,7 +48,14 @@ public class VeiculoController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Veiculo> deletarVeiculo(@PathVariable long id) {
-        return ResponseEntity.noContent().build();
+    public ResponseEntity<String> deletarVeiculo(@PathVariable long id) {
+        try{
+            veiculoService.deletarVeiculo(id);
+            LOGGER.info("Veículo {} eliminado com sucesso!", id);
+        } catch(Exception e){
+            LOGGER.error("Não foi possível eliminar o veículo {}!", id);
+            return new ResponseEntity<>("Não foi possível eliminar o veículo!", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return new ResponseEntity<>("Veículo eliminado com sucesso!", HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
