@@ -10,7 +10,6 @@ import com.fiap.techchallenge.carrental.repository.ClienteRepository;
 @Service
 public class CadastroClienteService {
 
-    //TODO
     @Autowired
     ClienteRepository clienteRepository;
 

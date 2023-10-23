@@ -30,7 +30,7 @@ public class Reserva {
     private Veiculo veiculo;
 
     @Column(nullable = false)
-    private Double valorContrato;
+    private Double valorReserva;
 
     @Column(nullable = false)
     private LocalDate dataInicio;
