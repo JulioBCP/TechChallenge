@@ -56,6 +56,6 @@ public class ClienteController {
             LOGGER.error("Não foi possível eliminar o cliente {}!", numeroCnh);
             return new ResponseEntity<>("Não foi possível eliminar o cliente!", HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return new ResponseEntity<>("Cliente eliminado com sucesso!", HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>("Cliente eliminado com sucesso!", HttpStatus.ACCEPTED);
     }
 }

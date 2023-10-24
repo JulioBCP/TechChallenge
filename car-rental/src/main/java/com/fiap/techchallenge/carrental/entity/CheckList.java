@@ -28,10 +28,7 @@ public class CheckList {
    private long id;
 
    @OneToOne
-   private Veiculo veiculo;
-
-   @OneToOne
-   private Contrato contrato;   
+   private Contrato contrato;
 
    @Column(nullable = false)
    private boolean abastecido;
