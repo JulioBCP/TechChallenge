@@ -1,6 +1,9 @@
 package com.fiap.techchallenge.carrental.entity;
 
 import lombok.Setter;
+
+import java.time.format.DateTimeFormatter;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -20,7 +23,7 @@ public class Contrato {
 
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
-   private long numeroApolice;
+   private long id;
 
    @Enumerated(EnumType.STRING)
    private FormaDePagamentoEnum formaPagamento;
@@ -29,5 +32,24 @@ public class Contrato {
 
    @OneToOne
    private Reserva reserva;
+
+   @OneToOne
+   private String token;
+
+   public void geradorToken(Reserva reserva){
+      final String nomeCliente = reserva.getCliente().getUsuario().getLogin().toUpperCase(); 
+      final String veiculo = reserva.getVeiculo().getModelo().toUpperCase();
+      DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM");
+
+      final String dataIni = reserva.getDataInicio().format(formato);
+      final String dataFim = reserva.getDataFim().format(formato);
+      
+      final String code = ""; 
+      //NOME#VEICULO#00/00#00/00
+      token.setToken(code);
+   }
+
+
+
 
 }
