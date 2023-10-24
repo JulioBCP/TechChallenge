@@ -1,25 +1,5 @@
 {
    "id": 1,
-   "veiculo": {
-      "id": 1,
-      "tipoVeiculo": "HATCH",
-      "marca": "TOYOTA",
-      "modelo": "Corolla",
-      "anomodelo": 2022,
-      "anoFabricacao": 2021,
-      "placa": "ABC-1234",
-      "km": 15500,
-      "kmManutencao": 14000,
-      "motor": "2.0L 4 cilindros",
-      "cor": "Prata",
-      "tracao": "T4X2",
-      "arCondicionado": true,
-      "trioEletrico": true,
-      "tetoSolar": false,
-      "combustivel": "GASOLINA",
-      "cabineDupla": false,
-      "capacidadeCarga": "500 kg"
-   },
    "contrato": {
       "numeroApolice": 12345,
       "formaPagamento": "CREDITO",
