@@ -2,6 +2,7 @@ package com.fiap.techchallenge.carrental.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
+import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
@@ -13,7 +14,7 @@ import lombok.Setter;
 @Getter
 @Setter
 
-@Embeddable
+@Entity(name="usuario")
 public class Usuario {
    
    @Id
