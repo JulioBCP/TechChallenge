@@ -52,7 +52,7 @@ public class CheckList {
    private TipoCheckListEnum tipoCheckList;
 
    public boolean fazerRevisao(int km) {
-      return km > veiculo.getKmManutencao() + KMREVISAO;
+      return km > contrato.getReserva().getVeiculo().getKmManutencao() + KMREVISAO;
    }
 
 }
