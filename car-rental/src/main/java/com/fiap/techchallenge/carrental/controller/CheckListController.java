@@ -45,7 +45,7 @@ public class CheckListController {
       return ResponseEntity.ok().body(checkListService.encontrarCheckList(id));
    }
 
-   @PutMapping("{/id}")
+   @PutMapping("/{id}")
    public ResponseEntity<CheckList> atualizaReserva(@PathVariable long id,
          @RequestBody AtualizaCheckListDTO checkListDTO) {
       LOGGER.info("CheckList de id {} alterado com sucesso!", id);
