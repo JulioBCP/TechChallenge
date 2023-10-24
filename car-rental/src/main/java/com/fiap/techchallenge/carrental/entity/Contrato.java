@@ -31,6 +31,6 @@ public class Contrato {
    private Reserva reserva;
 
    @OneToOne
-   private Reserva valorContrato;
+   private double valorContrato;
 
 }

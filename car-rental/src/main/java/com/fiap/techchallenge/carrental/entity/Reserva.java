@@ -2,7 +2,7 @@ package com.fiap.techchallenge.carrental.entity;
 
 import java.time.LocalDate;
 
-import com.fiap.techchallenge.carrental.exceptions.CarRentalDateExceptions;
+import com.fiap.techchallenge.carrental.exceptions.CarRentalDateException;
 import com.fiap.techchallenge.carrental.exceptions.VeiculoException;
 
 import jakarta.persistence.Column;
@@ -47,11 +47,11 @@ public class Reserva {
         TipoVeiculoEnum tipoVeiculo = veiculo.getTipoVeiculo(); 
 
         //as datas não podem ser nulas 
-        if (dataInicio == null && dataFim == null) {
-            throw new CarRentalDateExceptions("As duas datas deverão ser preenchidas");
+        if (dataInicio == null || dataFim == null) {
+            throw new CarRentalDateException("As duas datas deverão ser preenchidas");
         
         } else if(dataInicio.isBefore(hoje)) { 
-            throw new CarRentalDateExceptions("A data inicial não poderá ser maior que a data de hoje");
+            throw new CarRentalDateException("A data inicial não poderá ser maior que a data de hoje");
         // o  tipo de veiculo deverá vir preenchido
         } else if(tipoVeiculo  == null){
             throw new VeiculoException("o tipo do veiculo não pode ser vazio");
