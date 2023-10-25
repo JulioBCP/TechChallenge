@@ -32,13 +32,13 @@ public class Cliente {
    @Column(nullable = false, unique = true)
    private int CPF;
 
+   @Column(nullable = false)
+   private int telefone;   
+
    @Embedded
    private Endereco endereco;
 
    @Embedded
    private Usuario usuario;   
-
-   @Column(nullable = false)
-   private int telefone;
 
 }

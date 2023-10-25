@@ -1,0 +1,21 @@
+{
+    "numeroCnh": 13621711821,
+    "dataNascimento": "1990-01-15",
+    "sexo": "MASCULINO",
+    "CPF": 13621711821,
+    "telefone": 11995571720,
+    "endereco": {
+        "rua": "Rua Benedito Medezzene",
+        "numero": "137",
+        "bairro": "Pq das Flores I",
+        "cidade": "São Bernardo do Campo",
+        "estado": "SP",
+        "CEP": "09845-320"
+    },
+    "usuario": {
+       "login": "jorgefarias",
+       "senha": "senha123",
+       "nome": "Jorge Farias",
+       "tipoUsuario": "CLIENTE"
+    }   
+}
