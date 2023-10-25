@@ -34,14 +34,14 @@ public class Cliente {
    @Column(nullable = false, unique = true)
    private int CPF;
 
+   @Column(nullable = false)
+   private int telefone;   
+
    @Embedded
    private Endereco endereco;
 
    @OneToOne
    @JoinColumn(name = "usuario_id", referencedColumnName = "id")
    private Usuario usuario;   
-
-   @Column(nullable = false)
-   private int telefone;
 
 }
