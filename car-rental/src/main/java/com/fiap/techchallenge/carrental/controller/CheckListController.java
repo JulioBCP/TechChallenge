@@ -28,7 +28,7 @@ public class CheckListController {
    @Autowired
    CheckListService checkListService;
 
-   private static final Logger LOGGER = LoggerFactory.getLogger(ReservaController.class);
+   private static final Logger LOGGER = LoggerFactory.getLogger(CheckListController.class);
 
    @PostMapping
    public ResponseEntity<CheckList> inserirCheckList(@RequestBody CheckList checkList, UriComponentsBuilder builder) {
