@@ -10,32 +10,32 @@ import com.fiap.techchallenge.carrental.repository.ReservaRepository;
 @Service
 public class CadastroReservaService {
 
-    //TODO
+    // TODO
     @Autowired
     ReservaRepository reservaRepository;
 
-    //creat
+    // creat
     public Reserva inserirReserva(Reserva reserva) {
         return reservaRepository.save(reserva);
     }
 
-    //read
+    // read
     public Reserva encontrarReserva(long id) {
         return reservaRepository.getReferenceById(id);
-    } 
+    }
 
-    //update
+    // update
     public Reserva alterarReserva(AtualizaReservaDTO atualizaReserva, long id) {
         Reserva reserva = reservaRepository.getReferenceById(id);
         reserva.setVeiculo(atualizaReserva.veiculo());
-        reserva.setValorContrato(atualizaReserva.valorContrato());
+        reserva.setValorReserva(atualizaReserva.valorContrato());
         reserva.setDataInicio(atualizaReserva.dataInicio());
-        reserva.setDataFim(atualizaReserva.dataFim());      
+        reserva.setDataFim(atualizaReserva.dataFim());
 
-        return reservaRepository.save(reserva);  
+        return reservaRepository.save(reserva);
     }
 
-    //delete
+    // delete
     public void deletarReserva(long id) {
         reservaRepository.deleteById(id);
     }
