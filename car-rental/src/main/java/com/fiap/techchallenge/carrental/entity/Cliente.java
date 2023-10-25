@@ -27,18 +27,18 @@ public class Cliente {
    private LocalDate dataNascimento;
 
    @Enumerated(EnumType.STRING)
-   private SexoEnum sexo;   
+   private SexoEnum sexo;
 
    @Column(nullable = false, unique = true)
    private int CPF;
+
+   @Column(nullable = false)
+   private int telefone;
 
    @Embedded
    private Endereco endereco;
 
    @Embedded
-   private Usuario usuario;   
-
-   @Column(nullable = false)
-   private int telefone;
+   private Usuario usuario;
 
 }
