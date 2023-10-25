@@ -21,11 +21,10 @@ import com.fiap.techchallenge.carrental.DTO.AtualizaReservaDTO;
 import com.fiap.techchallenge.carrental.entity.Reserva;
 import com.fiap.techchallenge.carrental.service.CadastroReservaService;
 
-
 @RestController
-@RequestMapping(value="/Reservas")
+@RequestMapping(value = "/Reservas")
 public class ReservaController {
-    
+
     @Autowired
     CadastroReservaService reservaService;
     private static final Logger LOGGER = LoggerFactory.getLogger(ReservaController.class);
@@ -33,9 +32,9 @@ public class ReservaController {
     @PostMapping
     public ResponseEntity<Reserva> inserirReserva(@RequestBody Reserva reserva, UriComponentsBuilder builder) {
         reservaService.inserirReserva(reserva);
-        
-        URI location = builder.path("Reservas/{id}").buildAndExpand(reserva.getId()).toUri();        
-        return ResponseEntity.created(location).body(reserva);       
+
+        URI location = builder.path("Reservas/{id}").buildAndExpand(reserva.getId()).toUri();
+        return ResponseEntity.created(location).body(reserva);
     }
 
     @GetMapping("/{id}")
@@ -50,13 +49,13 @@ public class ReservaController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deletarReserva(@PathVariable long id) {
-        try{
+        try {
             reservaService.deletarReserva(id);
             LOGGER.info("Reserva {} eliminada com sucesso!", id);
-        } catch(Exception e){
+        } catch (Exception e) {
             LOGGER.error("Não foi possível eliminar a reserva {}!", id);
             return new ResponseEntity<>("Não foi possível eliminar a reserva!", HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return new ResponseEntity<>("Reserva eliminada com sucesso!", HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>("Reserva eliminada com sucesso!", HttpStatus.OK);
     }
 }

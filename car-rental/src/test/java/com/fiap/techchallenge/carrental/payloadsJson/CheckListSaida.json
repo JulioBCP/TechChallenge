@@ -1,0 +1,59 @@
+{
+   "contrato": {
+      "numeroApolice": 12345,
+      "formaPagamento": "CREDITO",
+      "multaDiaria": 50.0,
+      "reserva": {
+         "cliente": {
+            "numeroCnh": 123456789,
+            "dataNascimento": "1990-01-15",
+            "sexo": "MASCULINO",
+            "CPF": 12345678901,
+            "endereco": {
+               "rua": "Rua das Flores",
+               "numero": "123",
+               "bairro": "Centro",
+               "cidade": "Cidade",
+               "estado": "UF",
+               "CEP": "12345-678",
+               "telefone": 987654321
+            },
+            "usuario": {
+               "login": "joaodoe",
+               "senha": "senha123",
+               "nome": "João da Silva",
+               "tipoUsuario": "CLIENTE"
+            }
+         },
+         "veiculo": {
+            "id": 1,
+            "tipoVeiculo": "HATCH",
+            "marca": "TOYOTA",
+            "modelo": "Corolla",
+            "anomodelo": 2022,
+            "anoFabricacao": 2021,
+            "km": 15000,
+            "kmManutencao": 14000,
+            "motor": "2.0L 4 cilindros",
+            "cor": "Prata",
+            "tracao": "T4X2",
+            "arCondicionado": true,
+            "trioEletrico": true,
+            "tetoSolar": false,
+            "combustivel": "GASOLINA",
+            "cabineDupla": false,
+            "capacidadeCarga": "500 kg"
+         },
+      "valorContrato": 1300.0,
+      "dataInicio": "2023-01-15",
+      "dataFim": "2023-01-20"
+      }
+   },
+   "abastecido": true,
+   "pressaoPneus": 32,
+   "avariasPintura": "Arranhões na porta esquerda",
+   "avariasInterna": null,
+   "limpeza": "Interior limpo, exterior limpo",
+   "km": 15000,
+   "tipoCheckList": "SAIDA"
+}

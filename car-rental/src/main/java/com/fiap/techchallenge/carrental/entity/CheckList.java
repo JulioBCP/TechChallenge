@@ -28,10 +28,7 @@ public class CheckList {
    private long id;
 
    @OneToOne
-   private Veiculo veiculo;
-
-   @OneToOne
-   private Contrato contrato;   
+   private Contrato contrato;
 
    @Column(nullable = false)
    private boolean abastecido;
@@ -55,7 +52,7 @@ public class CheckList {
    private TipoCheckListEnum tipoCheckList;
 
    public boolean fazerRevisao(int km) {
-      return km > veiculo.getKmManutencao() + KMREVISAO;
+      return km > contrato.getReserva().getVeiculo().getKmManutencao() + KMREVISAO;
    }
 
 }

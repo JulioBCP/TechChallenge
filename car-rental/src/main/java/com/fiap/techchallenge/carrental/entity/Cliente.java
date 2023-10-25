@@ -29,19 +29,19 @@ public class Cliente {
    private LocalDate dataNascimento;
 
    @Enumerated(EnumType.STRING)
-   private SexoEnum sexo;   
+   private SexoEnum sexo;
 
    @Column(nullable = false, unique = true)
    private int CPF;
 
    @Column(nullable = false)
-   private int telefone;   
+   private int telefone;
 
    @Embedded
    private Endereco endereco;
 
    @OneToOne
    @JoinColumn(name = "usuario_id", referencedColumnName = "id")
-   private Usuario usuario;   
+   private Usuario usuario;
 
 }

@@ -22,19 +22,19 @@ import com.fiap.techchallenge.carrental.entity.Veiculo;
 import com.fiap.techchallenge.carrental.service.CadastroVeiculoService;
 
 @RestController
-@RequestMapping(value="/Veiculos")
+@RequestMapping(value = "/Veiculos")
 public class VeiculoController {
-    
+
     @Autowired
     CadastroVeiculoService veiculoService;
-    private static final Logger LOGGER = LoggerFactory.getLogger(VeiculoController.class);    
+    private static final Logger LOGGER = LoggerFactory.getLogger(VeiculoController.class);
 
     @PostMapping
     public ResponseEntity<Veiculo> inserirVeiculo(@RequestBody Veiculo veiculo, UriComponentsBuilder builder) {
         veiculoService.inserirVeiculo(veiculo);
-        
-        URI location = builder.path("Veiculos/{id}").buildAndExpand(veiculo.getId()).toUri();        
-        return ResponseEntity.created(location).body(veiculo);       
+
+        URI location = builder.path("Veiculos/{id}").buildAndExpand(veiculo.getId()).toUri();
+        return ResponseEntity.created(location).body(veiculo);
     }
 
     @GetMapping("/{id}")
@@ -49,13 +49,13 @@ public class VeiculoController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deletarVeiculo(@PathVariable long id) {
-        try{
+        try {
             veiculoService.deletarVeiculo(id);
             LOGGER.info("Veículo {} eliminado com sucesso!", id);
-        } catch(Exception e){
+        } catch (Exception e) {
             LOGGER.error("Não foi possível eliminar o veículo {}!", id);
             return new ResponseEntity<>("Não foi possível eliminar o veículo!", HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return new ResponseEntity<>("Veículo eliminado com sucesso!", HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>("Veículo eliminado com sucesso!", HttpStatus.OK);
     }
 }

@@ -22,19 +22,19 @@ import com.fiap.techchallenge.carrental.entity.Cliente;
 import com.fiap.techchallenge.carrental.service.CadastroClienteService;
 
 @RestController
-@RequestMapping(value="/clientes")
+@RequestMapping(value = "/clientes")
 public class ClienteController {
-    
+
     @Autowired
     CadastroClienteService clienteService;
-    private static final Logger LOGGER = LoggerFactory.getLogger(ClienteController.class);    
+    private static final Logger LOGGER = LoggerFactory.getLogger(ClienteController.class);
 
     @PostMapping
     public ResponseEntity<Cliente> inserirCliente(@RequestBody Cliente cliente, UriComponentsBuilder builder) {
         clienteService.inserirCliente(cliente);
-        
-        URI location = builder.path("clientes/{numeroCnh}").buildAndExpand(cliente.getNumeroCnh()).toUri();        
-        return ResponseEntity.created(location).body(cliente);       
+
+        URI location = builder.path("clientes/{numeroCnh}").buildAndExpand(cliente.getNumeroCnh()).toUri();
+        return ResponseEntity.created(location).body(cliente);
     }
 
     @GetMapping("/{numeroCnh}")
@@ -49,13 +49,13 @@ public class ClienteController {
 
     @DeleteMapping("/{numeroCnh}")
     public ResponseEntity<String> deletarCliente(@PathVariable long numeroCnh) {
-        try{
+        try {
             clienteService.deletarCliente(numeroCnh);
             LOGGER.info("Cliente {} eliminado com sucesso!", numeroCnh);
-        } catch(Exception e){
+        } catch (Exception e) {
             LOGGER.error("Não foi possível eliminar o cliente {}!", numeroCnh);
             return new ResponseEntity<>("Não foi possível eliminar o cliente!", HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return new ResponseEntity<>("Cliente eliminado com sucesso!", HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>("Cliente eliminado com sucesso!", HttpStatus.OK);
     }
 }
