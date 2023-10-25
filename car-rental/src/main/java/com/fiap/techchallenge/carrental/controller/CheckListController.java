@@ -62,6 +62,6 @@ public class CheckListController {
          LOGGER.error("Não foi possível excluir o checklist {} do banco de dados", id);
          return new ResponseEntity<>("Não foi possível excluir o checklist!", HttpStatus.INTERNAL_SERVER_ERROR);
       }
-      return new ResponseEntity<String>("CheckList deletado do banco de dados com sucesso!", HttpStatus.ACCEPTED);
+      return new ResponseEntity<String>("CheckList deletado do banco de dados com sucesso!", HttpStatus.OK);
    }
 }

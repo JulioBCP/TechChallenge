@@ -56,6 +56,6 @@ public class ContratoController {
             LOGGER.error("Não foi possível eliminar o contrato {}!", numeroApolice);
             return new ResponseEntity<>("Não foi possível eliminar o contrato!", HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return new ResponseEntity<>("Contrato eliminado com sucesso!", HttpStatus.ACCEPTED);
+        return new ResponseEntity<>("Contrato eliminado com sucesso!", HttpStatus.OK);
     }
 }

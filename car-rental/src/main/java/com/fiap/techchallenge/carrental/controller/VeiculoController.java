@@ -56,6 +56,6 @@ public class VeiculoController {
             LOGGER.error("Não foi possível eliminar o veículo {}!", id);
             return new ResponseEntity<>("Não foi possível eliminar o veículo!", HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return new ResponseEntity<>("Veículo eliminado com sucesso!", HttpStatus.ACCEPTED);
+        return new ResponseEntity<>("Veículo eliminado com sucesso!", HttpStatus.OK);
     }
 }

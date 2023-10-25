@@ -56,6 +56,6 @@ public class UsuarioController {
             LOGGER.error("Não foi possível eliminar o usuário {}!", id);
             return new ResponseEntity<>("Não foi possível eliminar o usuário!", HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return new ResponseEntity<>("Usuário eliminado com sucesso!", HttpStatus.ACCEPTED);
+        return new ResponseEntity<>("Usuário eliminado com sucesso!", HttpStatus.OK);
     }
 }

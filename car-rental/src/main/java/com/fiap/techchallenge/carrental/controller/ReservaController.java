@@ -56,6 +56,6 @@ public class ReservaController {
             LOGGER.error("Não foi possível eliminar a reserva {}!", id);
             return new ResponseEntity<>("Não foi possível eliminar a reserva!", HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return new ResponseEntity<>("Reserva eliminada com sucesso!", HttpStatus.ACCEPTED);
+        return new ResponseEntity<>("Reserva eliminada com sucesso!", HttpStatus.OK);
     }
 }
