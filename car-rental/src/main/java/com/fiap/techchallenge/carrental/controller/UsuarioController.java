@@ -22,19 +22,19 @@ import com.fiap.techchallenge.carrental.entity.Usuario;
 import com.fiap.techchallenge.carrental.service.CadastroUsuarioService;
 
 @RestController
-@RequestMapping(value="/Usuarios")
+@RequestMapping(value = "/Usuarios")
 public class UsuarioController {
-    
+
     @Autowired
     CadastroUsuarioService usuarioService;
-    private static final Logger LOGGER = LoggerFactory.getLogger(UsuarioController.class);    
+    private static final Logger LOGGER = LoggerFactory.getLogger(UsuarioController.class);
 
     @PostMapping
     public ResponseEntity<Usuario> inserirUsuario(@RequestBody Usuario Usuario, UriComponentsBuilder builder) {
         usuarioService.inserirUsuario(Usuario);
-        
-        URI location = builder.path("Usuarios/{id}").buildAndExpand(Usuario.getLogin()).toUri();        
-        return ResponseEntity.created(location).body(Usuario);       
+
+        URI location = builder.path("Usuarios/{id}").buildAndExpand(Usuario.getLogin()).toUri();
+        return ResponseEntity.created(location).body(Usuario);
     }
 
     @GetMapping("/{id}")
@@ -49,13 +49,13 @@ public class UsuarioController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deletarUsuario(@PathVariable long id) {
-        try{
+        try {
             usuarioService.deletarUsuario(id);
             LOGGER.info("Usuário {} eliminado com sucesso!", id);
-        } catch(Exception e){
+        } catch (Exception e) {
             LOGGER.error("Não foi possível eliminar o usuário {}!", id);
             return new ResponseEntity<>("Não foi possível eliminar o usuário!", HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return new ResponseEntity<>("Usuário eliminado com sucesso!", HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>("Usuário eliminado com sucesso!", HttpStatus.ACCEPTED);
     }
 }
