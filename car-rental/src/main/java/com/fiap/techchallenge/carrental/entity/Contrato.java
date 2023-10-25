@@ -30,4 +30,7 @@ public class Contrato {
    @OneToOne
    private Reserva reserva;
 
+   @OneToOne
+   private double valorContrato;
+
 }
