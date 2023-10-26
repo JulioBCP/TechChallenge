@@ -1,7 +1,10 @@
 package com.fiap.techchallenge.carrental.entity;
 
+import java.io.Serializable;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -14,7 +17,9 @@ import lombok.Setter;
 @Getter
 @Setter
 
-@Entity(name="usuario")
+@Entity(name = "usuario")
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+
 public class Usuario {
 
    @Id
