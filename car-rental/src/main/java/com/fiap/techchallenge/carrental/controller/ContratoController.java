@@ -31,29 +31,22 @@ public class ContratoController {
     public ResponseEntity<Contrato> inserirContrato(@RequestBody Contrato Contrato, UriComponentsBuilder builder) {
         contratoService.inserirContrato(Contrato);
 
-        URI location = builder.path("Contratos/{numeroApolice}").buildAndExpand(Contrato.getNumeroApolice()).toUri();
+        URI location = builder.path("Contratos/{id}").buildAndExpand(Contrato.getId()).toUri();
         return ResponseEntity.created(location).body(Contrato);
     }
 
-    @GetMapping("/{numeroApolice}")
-    public ResponseEntity<Contrato> buscarContrato(@PathVariable long numeroApolice) {
-        return ResponseEntity.ok().body(contratoService.encontrarContrato(numeroApolice));
+    @GetMapping("/{id}")
+    public ResponseEntity<Contrato> buscarContrato(@PathVariable long id) {
+        return ResponseEntity.ok().body(contratoService.encontrarContrato(id));
     }
 
-    // @PutMapping("/{numeroApolice}")
-    // public ResponseEntity<Contrato> atualizarContrato(@PathVariable long
-    // numeroApolice, @RequestBody AtualizaContratoDTO dto) {
-    // return ResponseEntity.ok().body(ContratoService.alterarContrato(dto,
-    // numeroApolice));
-    // }
-
-    @DeleteMapping("/{numeroApolice}")
-    public ResponseEntity<String> deletarContrato(@PathVariable long numeroApolice) {
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deletarContrato(@PathVariable long id) {
         try {
-            contratoService.deletarContrato(numeroApolice);
-            LOGGER.info("Contrato {} eliminado com sucesso!", numeroApolice);
+            contratoService.deletarContrato(id);
+            LOGGER.info("Contrato {} eliminado com sucesso!", id);
         } catch (Exception e) {
-            LOGGER.error("Não foi possível eliminar o contrato {}!", numeroApolice);
+            LOGGER.error("Não foi possível eliminar o contrato {}!", id);
             return new ResponseEntity<>("Não foi possível eliminar o contrato!", HttpStatus.INTERNAL_SERVER_ERROR);
         }
         return new ResponseEntity<>("Contrato eliminado com sucesso!", HttpStatus.OK);
