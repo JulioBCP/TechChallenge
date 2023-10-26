@@ -36,6 +36,9 @@ public class Contrato {
    private String token;
 
    public void geradorToken(Reserva reserva){
+      if(reserva == null)
+         return;
+
       final String nomeCliente = reserva.getCliente().getUsuario().getLogin().toUpperCase(); 
       final String veiculo = reserva.getVeiculo().getModelo().toUpperCase();
 
