@@ -48,7 +48,8 @@ public class ContratoCalculator {
                 break;
         }
         
-        return Double.valueOf(formato.format(valorContrato));
+ //       return Double.valueOf(formato.format(valorContrato));
+        return valorContrato;
                
     }
 }

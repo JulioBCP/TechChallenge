@@ -1,16 +1,24 @@
 package com.fiap.techchallenge.carrental.entity;
 
 import java.time.LocalDate;
+import java.time.Period;
+import java.util.List;
+import java.util.stream.Stream;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fiap.techchallenge.carrental.exceptions.CarRentalDateException;
 import com.fiap.techchallenge.carrental.exceptions.VeiculoException;
+import com.fiap.techchallenge.carrental.exceptions.VeiculoReservadoException;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Setter;
@@ -28,10 +36,10 @@ public class Reserva {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @OneToOne
+    @ManyToOne
     private Cliente cliente;
 
-    @OneToOne
+    @ManyToOne
     private Veiculo veiculo;
 
     @Column(nullable = false)
@@ -61,6 +69,25 @@ public class Reserva {
 
         } else {
             return ContratoCalculator.calculoValorContrato(dataInicio, dataFim, tipoVeiculo);
+        }
+    }
+
+    public void verificarSeExisteReserva(List<Reserva> listaDeReserva) {
+
+        Period period = Period.between(dataInicio, dataFim);
+        Stream<LocalDate> datesUntil = dataInicio.datesUntil(dataFim, period);
+        datesUntil.findFirst().isPresent();
+
+        boolean veiculoReservado = listaDeReserva.stream()
+                                                .anyMatch(
+                                                    r -> (r.getVeiculo().getId() == veiculo.getId() &&
+                                                    dataInicio.isEqual(r.getDataInicio())) ||
+                                                    (dataInicio.isAfter(r.getDataInicio()) &&
+                                                    dataInicio.isBefore(r.getDataFim()))
+                                                );
+
+        if (veiculoReservado) {
+            throw new VeiculoReservadoException("Veículo não disponivel nesse periodo!");
         }
     }
 }
