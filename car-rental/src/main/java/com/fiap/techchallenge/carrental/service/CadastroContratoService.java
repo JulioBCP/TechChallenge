@@ -22,8 +22,6 @@ public class CadastroContratoService {
         return contratoRepository.getReferenceById(id);
     } 
 
-    //update - contrato não tem update
-    
     //delete
     public void deletarContrato(long id) {
         contratoRepository.deleteById(id);
