@@ -1,6 +1,9 @@
 package com.fiap.techchallenge.carrental.entity;
 
 import lombok.Setter;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -16,6 +19,7 @@ import lombok.Getter;
 
 @Entity
 @Table(name = "contrato")
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 public class Contrato {
 
    @Id
@@ -29,8 +33,5 @@ public class Contrato {
 
    @OneToOne
    private Reserva reserva;
-
-   @OneToOne
-   private double valorContrato;
 
 }

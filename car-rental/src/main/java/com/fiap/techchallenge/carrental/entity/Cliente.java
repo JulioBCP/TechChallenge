@@ -2,6 +2,8 @@ package com.fiap.techchallenge.carrental.entity;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
@@ -19,6 +21,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "cliente")
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 public class Cliente {
 
    @Id
