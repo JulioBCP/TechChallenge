@@ -12,7 +12,7 @@ public class CadastroContratoService {
     @Autowired
     ContratoRepository contratoRepository;
 
-    //creat
+    //create
     public Contrato inserirContrato(Contrato contrato) {
         return contratoRepository.save(contrato);
     }
