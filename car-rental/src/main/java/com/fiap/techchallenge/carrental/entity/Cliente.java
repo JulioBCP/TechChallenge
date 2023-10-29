@@ -35,10 +35,10 @@ public class Cliente {
    private SexoEnum sexo;
 
    @Column(nullable = false, unique = true)
-   private int CPF;
+   private long CPF;
 
    @Column(nullable = false)
-   private int telefone;
+   private long telefone;
 
    @Embedded
    private Endereco endereco;

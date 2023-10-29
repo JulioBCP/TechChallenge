@@ -1,0 +1,23 @@
+{
+   "numeroCnh": 12345678910,
+   "dataNascimento": "1990-01-15",
+   "sexo": "MASCULINO",
+   "cpf": 12345678910,
+   "telefone": 19998765362,
+   "endereco": {
+       "rua": "Rua das Flores",
+       "numero": "123",
+       "bairro": "Centro",
+       "cidade": "Cidade",
+       "estado": "UF",
+       "pais": "Brasil",
+       "CEP": "12345-678"
+   },
+   "usuario": {
+       "id": 1,
+       "login": "joaodoe",
+       "senha": "senha123",
+       "nome": "João da Silva",
+       "tipoUsuario": "CLIENTE"
+   }
+}
