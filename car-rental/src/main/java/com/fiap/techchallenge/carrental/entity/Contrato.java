@@ -1,6 +1,8 @@
 package com.fiap.techchallenge.carrental.entity;
 
 import java.time.format.DateTimeFormatter;
+import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -18,6 +20,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "contrato")
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 public class Contrato {
 
    @Id
@@ -32,10 +35,10 @@ public class Contrato {
    @OneToOne
    private Reserva reserva;
 
-   @OneToOne
+  @OneToOne
    private String token;
 
-   public void geradorToken(Reserva reserva){
+   public void geradorToken(Reserva reserva) {
       if(reserva == null)
          return;
 

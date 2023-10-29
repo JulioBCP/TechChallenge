@@ -2,6 +2,7 @@ package com.fiap.techchallenge.carrental.entity;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fiap.techchallenge.carrental.exceptions.CarRentalDateException;
 import com.fiap.techchallenge.carrental.exceptions.VeiculoException;
 
@@ -20,11 +21,12 @@ import lombok.Getter;
 
 @Entity
 @Table(name = "reserva")
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 public class Reserva {
 
-   @Id
-   @GeneratedValue(strategy = GenerationType.IDENTITY)
-   private long id;    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
     @OneToOne
     private Cliente cliente;
@@ -41,21 +43,22 @@ public class Reserva {
     @Column(nullable = false)
     private LocalDate dataFim;
 
-    public double calculaValorReserva(LocalDate dataInicio, LocalDate dataFim, Veiculo veiculo) throws VeiculoException{
-        //dataInicio não pode ser anterior à data de inicio da locação
+    public double calculaValorReserva(LocalDate dataInicio, LocalDate dataFim, Veiculo veiculo)
+            throws VeiculoException {
+        // dataInicio não pode ser anterior à data de inicio da locação
         LocalDate hoje = LocalDate.now();
-        TipoVeiculoEnum tipoVeiculo = veiculo.getTipoVeiculo(); 
+        TipoVeiculoEnum tipoVeiculo = veiculo.getTipoVeiculo();
 
-        //as datas não podem ser nulas 
+        // as datas não podem ser nulas
         if (dataInicio == null || dataFim == null) {
             throw new CarRentalDateException("As duas datas deverão ser preenchidas");
-        
-        } else if(dataInicio.isBefore(hoje)) { 
+
+        } else if (dataInicio.isBefore(hoje)) {
             throw new CarRentalDateException("A data inicial não poderá ser maior que a data de hoje");
-        // o  tipo de veiculo deverá vir preenchido
-        } else if(tipoVeiculo  == null){
+            // o tipo de veiculo deverá vir preenchido
+        } else if (tipoVeiculo == null) {
             throw new VeiculoException("o tipo do veiculo não pode ser vazio");
-        
+
         } else {
             return ContratoCalculator.calculoValorContrato(dataInicio, dataFim, tipoVeiculo);
         }

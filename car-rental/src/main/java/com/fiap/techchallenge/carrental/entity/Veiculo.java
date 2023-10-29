@@ -1,5 +1,7 @@
 package com.fiap.techchallenge.carrental.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -16,12 +18,13 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "veiculo")
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 public class Veiculo {
 
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private long id;
-   
+
    @Enumerated(EnumType.STRING)
    private TipoVeiculoEnum tipoVeiculo;
 
@@ -50,7 +53,7 @@ public class Veiculo {
    private String cor;
 
    @Enumerated(EnumType.STRING)
-   private TracaoEnum tracao;   
+   private TracaoEnum tracao;
 
    @Column(nullable = false)
    private boolean arCondicionado;
@@ -71,4 +74,3 @@ public class Veiculo {
    private String capacidadeCarga;
 
 }
-
