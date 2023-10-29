@@ -36,6 +36,7 @@ public class Contrato {
    @OneToOne
    private Reserva reserva;
 
+
    @Column
    private String token;
 
