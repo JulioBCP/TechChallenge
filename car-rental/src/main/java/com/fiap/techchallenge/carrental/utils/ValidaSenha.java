@@ -1,4 +1,4 @@
-package com.fiap.techchallenge.carrental.entity;
+package com.fiap.techchallenge.carrental.utils;
 
 public class ValidaSenha {
 
