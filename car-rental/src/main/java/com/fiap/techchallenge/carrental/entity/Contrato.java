@@ -4,6 +4,7 @@ import java.time.format.DateTimeFormatter;
 import lombok.Setter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -35,7 +36,7 @@ public class Contrato {
    @OneToOne
    private Reserva reserva;
 
-  @OneToOne
+  @Column
    private String token;
 
    public void geradorToken(Reserva reserva) {
