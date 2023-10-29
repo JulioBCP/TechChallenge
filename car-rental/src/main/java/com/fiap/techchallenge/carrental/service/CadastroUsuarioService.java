@@ -10,7 +10,6 @@ import com.fiap.techchallenge.carrental.repository.UsuarioRepository;
 @Service
 public class CadastroUsuarioService {
 
-    //TODO
     @Autowired
     UsuarioRepository usuarioRepository;
 

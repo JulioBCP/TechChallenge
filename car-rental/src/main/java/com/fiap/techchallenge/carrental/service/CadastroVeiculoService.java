@@ -10,7 +10,6 @@ import com.fiap.techchallenge.carrental.repository.VeiculoRepository;
 @Service
 public class CadastroVeiculoService {
 
-    //TODO
     @Autowired
     VeiculoRepository veiculoRepository;
 

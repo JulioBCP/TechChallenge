@@ -9,29 +9,21 @@ import com.fiap.techchallenge.carrental.repository.ContratoRepository;
 @Service
 public class CadastroContratoService {
 
-    //TODO
     @Autowired
     ContratoRepository contratoRepository;
 
-    //creat
+    //create
     public Contrato inserirContrato(Contrato contrato) {
         return contratoRepository.save(contrato);
     }
 
     //read
-    public Contrato encontrarContrato(long numeroApolice) {
-        return contratoRepository.getReferenceById(numeroApolice);
+    public Contrato encontrarContrato(long id) {
+        return contratoRepository.getReferenceById(id);
     } 
 
-    //update
-    // public Contrato alterarContrato(AtualizaContratoDTO atualizaContrato, long numeroApolice) {
-    //     Contrato Contrato = ContratoRepository.getReferenceById(numeroApolice);
-
-    //     return ContratoRepository.save(Contrato);
-    // }
-
     //delete
-    public void deletarContrato(long numeroApolice) {
-        contratoRepository.deleteById(numeroApolice);
+    public void deletarContrato(long id) {
+        contratoRepository.deleteById(id);
     }
 }
