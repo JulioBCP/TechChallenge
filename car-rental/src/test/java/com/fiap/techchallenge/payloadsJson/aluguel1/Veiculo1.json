@@ -1,0 +1,18 @@
+{
+   "tipoVeiculo": "HATCH",
+   "marca": "VOLKSWAGEN",
+   "modelo": "Polo",
+   "anomodelo": 2015,
+   "anoFabricacao": 2016,
+   "km": 65500,
+   "kmManutencao": 70000,
+   "motor": "2.0L 4 cilindros",
+   "cor": "Chumbo",
+   "tracao": "T4X2",
+   "arCondicionado": true,
+   "trioEletrico": true,
+   "tetoSolar": false,
+   "combustivel": "FLEX",
+   "cabineDupla": false,
+   "capacidadeCarga": "500 kg"
+}

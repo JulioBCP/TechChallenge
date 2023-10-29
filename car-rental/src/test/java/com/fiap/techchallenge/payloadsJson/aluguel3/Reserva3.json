@@ -1,0 +1,47 @@
+{
+   "cliente": {
+      "numeroCnh": 52356403817,
+      "dataNascimento": "1998-09-21",
+      "sexo": "MASCULINO",
+      "cpf": 52356403817,
+      "telefone": 11964025402,
+      "endereco": {
+          "rua": "Alameda Terra Cota",
+          "numero": "180",
+          "bairro": "Jardim Cerâmica",
+          "cidade": "São Caetano",
+          "estado": "SP",
+          "pais": "Brasil",
+          "CEP": "09770-330"
+      },
+      "usuario": {
+          "id": 4,
+          "login": "robertojose",
+          "senha": "senha123",
+          "nome": "Roberto José",
+          "tipoUsuario": "CLIENTE"
+      }   
+  },
+   "veiculo":{
+      "id": 4,
+      "tipoVeiculo": "PICKUP",
+      "marca": "CHEVROLET",
+      "modelo": "Saveiro",
+      "anomodelo": 2022,
+      "anoFabricacao": 2022,
+      "km": 35700,
+      "kmManutencao": 40000,
+      "motor": "1.8L 4 cilindros",
+      "cor": "Branco",
+      "tracao": "T4X2",
+      "arCondicionado": true,
+      "trioEletrico": true,
+      "tetoSolar": false,
+      "combustivel": "FLEX",
+      "cabineDupla": false,
+      "capacidadeCarga": "750 kg"
+   },
+   "valorReserva": 2050.0,
+   "dataInicio": "2023-05-15",
+   "dataFim": "2023-05-25"
+}

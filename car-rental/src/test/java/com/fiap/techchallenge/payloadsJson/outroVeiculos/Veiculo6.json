@@ -1,0 +1,18 @@
+{
+   "tipoVeiculo": "UTILITARIO",
+   "marca": "MERCEDES",
+   "modelo": "Sprinter",
+   "anomodelo": 2021,
+   "anoFabricacao": 2021,
+   "km": 27600,
+   "kmManutencao": 30000,
+   "motor": "OM654 2.0 turbodiesel",
+   "cor": "Branco",
+   "tracao": "T4X2",
+   "arCondicionado": true,
+   "trioEletrico": true,
+   "tetoSolar": false,
+   "combustivel": "DIESEL",
+   "cabineDupla": false,
+   "capacidadeCarga": "2740 kg"
+}
