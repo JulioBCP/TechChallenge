@@ -2,7 +2,7 @@
    "formaPagamento": "CREDITO",
    "multaDiaria": 50.0,
    "reserva": {
-        "id": 2,
+        "id": 1,
     "cliente": {
         "numeroCnh": 12345678910,
         "dataNascimento": "1990-01-15",

@@ -1,10 +1,10 @@
 {
    "contrato":{
-        "numeroApolice": 1,
+        "id": 1,
         "formaPagamento": "CREDITO",
         "multaDiaria": 50.0,
         "reserva":{
-            "id": 2,
+            "id": 1,
             "cliente": {
                 "numeroCnh": 12345,
                 "dataNascimento": "1990-01-15",
@@ -27,23 +27,23 @@
                 }
             },
             "veiculo": {
-            "id": 1,
-            "tipoVeiculo": "HATCH",
-            "marca": "TOYOTA",
-            "modelo": "Corolla",
-            "anomodelo": 2022,
-            "anoFabricacao": 2021,
-            "km": 15500,
-            "kmManutencao": 14000,
-            "motor": "2.0L 4 cilindros",
-            "cor": "Prata",
-            "tracao": "T4X2",
-            "arCondicionado": true,
-            "trioEletrico": true,
-            "tetoSolar": false,
-            "combustivel": "GASOLINA",
-            "cabineDupla": false,
-            "capacidadeCarga": "500 kg"
+                "id": 1,
+                "tipoVeiculo": "HATCH",
+                "marca": "TOYOTA",
+                "modelo": "Corolla",
+                "anomodelo": 2022,
+                "anoFabricacao": 2021,
+                "km": 15500,
+                "kmManutencao": 14000,
+                "motor": "2.0L 4 cilindros",
+                "cor": "Prata",
+                "tracao": "T4X2",
+                "arCondicionado": true,
+                "trioEletrico": true,
+                "tetoSolar": false,
+                "combustivel": "GASOLINA",
+                "cabineDupla": false,
+                "capacidadeCarga": "500 kg"
             },
             "valorReserva": 1300.0,
             "dataInicio": "2023-01-15",
