@@ -1,7 +1,5 @@
 package com.fiap.techchallenge.carrental.entity;
 
-import java.io.Serializable;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;

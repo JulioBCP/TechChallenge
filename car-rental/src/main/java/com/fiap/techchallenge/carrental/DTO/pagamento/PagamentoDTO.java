@@ -2,11 +2,13 @@ package com.fiap.techchallenge.carrental.DTO.pagamento;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 @Setter
 @Getter
+@Builder
 public class PagamentoDTO {
     
     @JsonProperty("amount")

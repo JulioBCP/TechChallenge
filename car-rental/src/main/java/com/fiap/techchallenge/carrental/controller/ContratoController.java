@@ -16,15 +16,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import com.fiap.techchallenge.carrental.DTO.CartaoClienteDTO;
+import com.fiap.techchallenge.carrental.entity.Cliente;
 import com.fiap.techchallenge.carrental.entity.Contrato;
+import com.fiap.techchallenge.carrental.entity.MarcaEnum;
+import com.fiap.techchallenge.carrental.entity.Pagamento;
+import com.fiap.techchallenge.carrental.entity.StatusPagamento;
+import com.fiap.techchallenge.carrental.entity.Usuario;
+import com.fiap.techchallenge.carrental.entity.Veiculo;
 import com.fiap.techchallenge.carrental.service.CadastroContratoService;
+import com.fiap.techchallenge.carrental.service.PagamentoService;
 
 @RestController
-@RequestMapping(value = "/Contratos")
+@RequestMapping(value = "/contratos")
 public class ContratoController {
 
     @Autowired
-    CadastroContratoService contratoService;
+    private CadastroContratoService contratoService;
+
+    @Autowired
+    private PagamentoService pagamentoService;
+
     private static final Logger LOGGER = LoggerFactory.getLogger(ContratoController.class);
 
     @PostMapping
@@ -50,5 +62,44 @@ public class ContratoController {
             return new ResponseEntity<>("Não foi possível eliminar o contrato!", HttpStatus.INTERNAL_SERVER_ERROR);
         }
         return new ResponseEntity<>("Contrato eliminado com sucesso!", HttpStatus.OK);
+    }
+
+    @PostMapping("/{id}/pagamentos/")
+    public ResponseEntity<Contrato> efetuarPagamento(@PathVariable long id, @RequestBody CartaoClienteDTO cartaoCliente) {
+        Contrato contrato = contratoService.efetuarPagamento(id, cartaoCliente);
+
+        Pagamento pagamento = contrato.getPagamento();
+        if(pagamento.getStatus().equals(StatusPagamento.PAGO)) {
+            return ResponseEntity.ok().build();
+        } else {
+            return ResponseEntity.internalServerError().build();
+        }
+    }
+
+    @GetMapping("teste")
+    public String teste(){
+        Usuario usuario = new Usuario();
+        usuario.setNome("Thomas Germanos Dantas");
+        Cliente cliente = new Cliente();
+        cliente.setCPF(91583818057l);
+        cliente.setEmail("thomasgermanos@gmail.com");
+        cliente.setUsuario(usuario);
+
+        Veiculo veiculo = new Veiculo();
+        veiculo.setAnoFabricacao(2012);
+        veiculo.setAnomodelo(2013);
+        veiculo.setMarca(MarcaEnum.FIAT);
+        veiculo.setModelo("Sienna");
+        
+        CartaoClienteDTO cartaoCliente = new CartaoClienteDTO();
+        cartaoCliente.setCcv("112");
+        cartaoCliente.setNumero("5567462609791245");
+        cartaoCliente.setAnoVencimento(2025);
+        cartaoCliente.setMesVencimento(12);
+
+        double valorPagamento = 123.22;
+
+        ResponseEntity<String> response = pagamentoService.efetuarPagamento(cliente, veiculo, cartaoCliente, valorPagamento);
+        return response.getBody();
     }
 }

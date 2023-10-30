@@ -14,16 +14,16 @@ import lombok.Setter;
 @Entity(name = "pagamento")
 public class Pagamento {
     
-   @Id
-   @GeneratedValue(strategy = GenerationType.IDENTITY)
-   private long id;
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    
     private double valor;
     
     private LocalDate dataPagamento;
 
     private String orderId;
-
+    
     private StatusPagamento status;
 
 }

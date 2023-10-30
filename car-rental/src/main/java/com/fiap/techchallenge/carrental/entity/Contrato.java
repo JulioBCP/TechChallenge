@@ -1,14 +1,15 @@
 package com.fiap.techchallenge.carrental.entity;
 
-import java.time.format.DateTimeFormatter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -34,7 +35,8 @@ public class Contrato {
    @OneToOne
    private Reserva reserva;
 
-   @OneToOne
+   @OneToOne(cascade = CascadeType.ALL)
+   @JoinColumn(name = "pagamento_id", referencedColumnName = "id")
    private Pagamento pagamento;
-   
+
 }
