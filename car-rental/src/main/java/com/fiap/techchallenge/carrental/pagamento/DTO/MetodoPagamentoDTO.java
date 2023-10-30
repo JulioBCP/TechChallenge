@@ -1,4 +1,4 @@
-package com.fiap.techchallenge.carrental.DTO.pagamento;
+package com.fiap.techchallenge.carrental.pagamento.DTO;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

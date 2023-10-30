@@ -1,4 +1,4 @@
-package com.fiap.techchallenge.carrental.service;
+package com.fiap.techchallenge.carrental.pagamento.service;
 
 import java.net.URI;
 
@@ -11,10 +11,10 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.fiap.techchallenge.carrental.DTO.CartaoClienteDTO;
-import com.fiap.techchallenge.carrental.DTO.pagamento.PedidoDTO;
-import com.fiap.techchallenge.carrental.DTO.pagamento.PedidoDTOBuilder;
 import com.fiap.techchallenge.carrental.entity.Cliente;
 import com.fiap.techchallenge.carrental.entity.Veiculo;
+import com.fiap.techchallenge.carrental.pagamento.DTO.PedidoDTO;
+import com.fiap.techchallenge.carrental.pagamento.DTO.PedidoDTOBuilder;
 
 @Service
 public class PagamentoService {

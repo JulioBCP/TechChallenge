@@ -1,6 +1,7 @@
 package com.fiap.techchallenge.carrental.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fiap.techchallenge.carrental.pagamento.entity.Pagamento;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;

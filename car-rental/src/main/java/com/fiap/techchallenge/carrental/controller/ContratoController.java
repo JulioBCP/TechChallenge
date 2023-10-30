@@ -20,12 +20,12 @@ import com.fiap.techchallenge.carrental.DTO.CartaoClienteDTO;
 import com.fiap.techchallenge.carrental.entity.Cliente;
 import com.fiap.techchallenge.carrental.entity.Contrato;
 import com.fiap.techchallenge.carrental.entity.MarcaEnum;
-import com.fiap.techchallenge.carrental.entity.Pagamento;
-import com.fiap.techchallenge.carrental.entity.StatusPagamento;
 import com.fiap.techchallenge.carrental.entity.Usuario;
 import com.fiap.techchallenge.carrental.entity.Veiculo;
+import com.fiap.techchallenge.carrental.pagamento.entity.Pagamento;
+import com.fiap.techchallenge.carrental.pagamento.entity.enumarations.StatusPagamento;
+import com.fiap.techchallenge.carrental.pagamento.service.PagamentoService;
 import com.fiap.techchallenge.carrental.service.CadastroContratoService;
-import com.fiap.techchallenge.carrental.service.PagamentoService;
 
 @RestController
 @RequestMapping(value = "/contratos")
