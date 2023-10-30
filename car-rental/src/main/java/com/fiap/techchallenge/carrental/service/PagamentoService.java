@@ -1,12 +1,6 @@
 package com.fiap.techchallenge.carrental.service;
 
 import java.net.URI;
-import java.security.KeyManagementException;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
-import java.security.cert.X509Certificate;
-
-import javax.net.ssl.SSLContext;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
@@ -49,7 +43,6 @@ public class PagamentoService {
         .header("Content-type", "application/json")
         .body(pedidoPagamento, getClass());
         
-        System.out.println("valor item: " +requestEntity.getBody().getItens().get(0).getValor());
         ResponseEntity<String> response = restTemplate.exchange(requestEntity, String.class);
         
         return response;
