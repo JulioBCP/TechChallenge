@@ -1,6 +1,6 @@
 package com.fiap.techchallenge.carrental.pagamento.entity.enumarations;
 
-public enum StatusPagamento {
+public enum StatusPagamentoEnum {
     
     PENDENTE,
     PAGO

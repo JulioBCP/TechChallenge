@@ -23,7 +23,7 @@ import com.fiap.techchallenge.carrental.entity.MarcaEnum;
 import com.fiap.techchallenge.carrental.entity.Usuario;
 import com.fiap.techchallenge.carrental.entity.Veiculo;
 import com.fiap.techchallenge.carrental.pagamento.entity.Pagamento;
-import com.fiap.techchallenge.carrental.pagamento.entity.enumarations.StatusPagamento;
+import com.fiap.techchallenge.carrental.pagamento.entity.enumarations.StatusPagamentoEnum;
 import com.fiap.techchallenge.carrental.pagamento.service.PagamentoService;
 import com.fiap.techchallenge.carrental.service.CadastroContratoService;
 
@@ -69,7 +69,7 @@ public class ContratoController {
         Contrato contrato = contratoService.efetuarPagamento(id, cartaoCliente);
 
         Pagamento pagamento = contrato.getPagamento();
-        if(pagamento.getStatus().equals(StatusPagamento.PAGO)) {
+        if(pagamento.getStatus().equals(StatusPagamentoEnum.PAGO)) {
             return ResponseEntity.ok().build();
         } else {
             return ResponseEntity.internalServerError().build();

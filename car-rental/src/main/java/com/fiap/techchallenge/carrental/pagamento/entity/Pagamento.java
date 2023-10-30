@@ -2,7 +2,7 @@ package com.fiap.techchallenge.carrental.pagamento.entity;
 
 import java.time.LocalDate;
 
-import com.fiap.techchallenge.carrental.pagamento.entity.enumarations.StatusPagamento;
+import com.fiap.techchallenge.carrental.pagamento.entity.enumarations.StatusPagamentoEnum;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,6 +26,6 @@ public class Pagamento {
 
     private String orderId;
     
-    private StatusPagamento status;
+    private StatusPagamentoEnum status;
 
 }

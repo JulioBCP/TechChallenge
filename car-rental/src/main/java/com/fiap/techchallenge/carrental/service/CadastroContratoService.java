@@ -19,7 +19,7 @@ import com.fiap.techchallenge.carrental.entity.ContratoCalculator;
 import com.fiap.techchallenge.carrental.entity.Reserva;
 import com.fiap.techchallenge.carrental.entity.Veiculo;
 import com.fiap.techchallenge.carrental.pagamento.entity.Pagamento;
-import com.fiap.techchallenge.carrental.pagamento.entity.enumarations.StatusPagamento;
+import com.fiap.techchallenge.carrental.pagamento.entity.enumarations.StatusPagamentoEnum;
 import com.fiap.techchallenge.carrental.pagamento.service.PagamentoService;
 import com.fiap.techchallenge.carrental.repository.ContratoRepository;
 
@@ -62,7 +62,7 @@ public class CadastroContratoService {
         ResponseEntity<String> response = pagamentoService.efetuarPagamento(cliente, veiculo, cartaoCliente, valorPagamento);
 
         if(response.getStatusCode().equals(HttpStatus.CREATED)) {
-            contrato.getPagamento().setStatus(StatusPagamento.PAGO);
+            contrato.getPagamento().setStatus(StatusPagamentoEnum.PAGO);
             contrato.getPagamento().setDataPagamento(LocalDate.now());
             try {
                 contrato.getPagamento().setOrderId(extrairOrderIdRequest(response));
@@ -76,7 +76,7 @@ public class CadastroContratoService {
 
     private Pagamento criarPagamento() {
         Pagamento pagamento = new Pagamento();
-        pagamento.setStatus(StatusPagamento.PENDENTE);
+        pagamento.setStatus(StatusPagamentoEnum.PENDENTE);
         
 
         return pagamento;
