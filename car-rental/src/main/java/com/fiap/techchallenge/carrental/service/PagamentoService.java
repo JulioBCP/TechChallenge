@@ -32,20 +32,14 @@ public class PagamentoService {
         PedidoDTO pedidoPagamento = PedidoDTOBuilder.build(cliente, veiculo, cartaoClienteDTO, valorPagamento);
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.set("Authorization", "Bearer "+token);
-        // return restTemplate.exchange(baseUrl + "/orders", HttpMethod.POST, new HttpEntity<String>(httpHeaders), pedidoPagamento, httpHeaders, String.class);
-        // return restTemplate.postForEntity(baseUrl + "/orders", pedidoPagamento, String.class);
-
 
         URI uri = UriComponentsBuilder.fromUriString(baseUrl + "/orders").build().toUri();
 
         RequestEntity<PedidoDTO> requestEntity = RequestEntity.post(uri)
-		.header("Authorization", "Bearer 432902D6300E49E6B559A386E179C14F")
-        .header("Content-type", "application/json")
+        .headers(httpHeaders)
         .body(pedidoPagamento, getClass());
         
-        ResponseEntity<String> response = restTemplate.exchange(requestEntity, String.class);
-        
-        return response;
+        return restTemplate.exchange(requestEntity, String.class);
 
     }
 
