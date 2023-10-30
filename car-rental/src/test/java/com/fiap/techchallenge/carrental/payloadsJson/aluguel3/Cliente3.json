@@ -2,7 +2,7 @@
     "numeroCnh": 52356403817,
     "dataNascimento": "1998-09-21",
     "sexo": "MASCULINO",
-    "CPF": 52356403817,
+    "cpf": 52356403817,
     "telefone": 11964025402,
     "endereco": {
         "rua": "Alameda Terra Cota",
@@ -10,12 +10,14 @@
         "bairro": "Jardim Cerâmica",
         "cidade": "São Caetano",
         "estado": "SP",
+        "pais": "Brasil",
         "CEP": "09770-330"
     },
     "usuario": {
-       "login": "robertojose",
-       "senha": "senha123",
-       "nome": "Roberto José",
-       "tipoUsuario": "CLIENTE"
+        "id": 4,
+        "login": "robertojose",
+        "senha": "senha123",
+        "nome": "Roberto José",
+        "tipoUsuario": "CLIENTE"
     }   
 }

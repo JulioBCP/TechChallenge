@@ -41,7 +41,7 @@ public class Cliente {
    private long CPF;
 
    @Column(nullable = false)
-   private int telefone;
+   private long telefone;
 
    @Embedded
    private Endereco endereco;

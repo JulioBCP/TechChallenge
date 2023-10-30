@@ -1,0 +1,18 @@
+{
+   "tipoVeiculo": "SUV",
+   "marca": "HONDA",
+   "modelo": "HRV",
+   "anomodelo": 2022,
+   "anoFabricacao": 2023,
+   "km": 17200,
+   "kmManutencao": 20000,
+   "motor": "1,5l 4 cilindros em linha",
+   "cor": "Cinza Basalto",
+   "tracao": "T4X4",
+   "arCondicionado": true,
+   "trioEletrico": true,
+   "tetoSolar": false,
+   "combustivel": "FLEX",
+   "cabineDupla": false,
+   "capacidadeCarga": "750 kg"
+}

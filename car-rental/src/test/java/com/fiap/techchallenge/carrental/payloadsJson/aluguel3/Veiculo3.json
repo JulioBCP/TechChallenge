@@ -1,0 +1,18 @@
+{
+   "tipoVeiculo": "PICKUP",
+   "marca": "CHEVROLET",
+   "modelo": "Saveiro",
+   "anomodelo": 2022,
+   "anoFabricacao": 2022,
+   "km": 35700,
+   "kmManutencao": 40000,
+   "motor": "1.8L 4 cilindros",
+   "cor": "Branco",
+   "tracao": "T4X2",
+   "arCondicionado": true,
+   "trioEletrico": true,
+   "tetoSolar": false,
+   "combustivel": "FLEX",
+   "cabineDupla": false,
+   "capacidadeCarga": "750 kg"
+}

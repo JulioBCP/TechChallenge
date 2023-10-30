@@ -1,0 +1,47 @@
+{
+   "cliente": {
+      "numeroCnh": 11768463875,
+      "dataNascimento": "1996-06-19",
+      "sexo": "FEMININO",
+      "cpf": 11768463875,
+      "telefone": 11991223384,
+      "endereco": {
+          "rua": "Rua Jacinto Coelho",
+          "numero": "444",
+          "bairro": "Jardim Veneza",
+          "cidade": "Santo André",
+          "estado": "SP",
+          "pais": "Brasil",
+          "CEP": "09865-350"
+      },
+      "usuario": {
+          "id": 3,
+          "login": "ruthalmeida",
+          "senha": "senha123",
+          "nome": "Ruth Almeida",
+          "tipoUsuario": "CLIENTE"
+      }   
+  },
+   "veiculo": {
+      "id": 3,
+      "tipoVeiculo": "SEDAN",
+      "marca": "CHEVROLET",
+      "modelo": "Onix",
+      "anomodelo": 2020,
+      "anoFabricacao": 2020,
+      "km": 35300,
+      "kmManutencao": 40000,
+      "motor": "1.6L 4 cilindros",
+      "cor": "Branco",
+      "tracao": "T4X2",
+      "arCondicionado": true,
+      "trioEletrico": true,
+      "tetoSolar": false,
+      "combustivel": "FLEX",
+      "cabineDupla": false,
+      "capacidadeCarga": "550 kg"
+   },
+   "valorReserva": 1250.0,
+   "dataInicio": "2023-03-23",
+   "dataFim": "2023-03-29"
+}

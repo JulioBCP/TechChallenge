@@ -2,7 +2,7 @@
     "numeroCnh": 11768463875,
     "dataNascimento": "1996-06-19",
     "sexo": "FEMININO",
-    "CPF": 11768463875,
+    "cpf": 11768463875,
     "telefone": 11991223384,
     "endereco": {
         "rua": "Rua Jacinto Coelho",
@@ -10,12 +10,14 @@
         "bairro": "Jardim Veneza",
         "cidade": "Santo André",
         "estado": "SP",
+        "pais": "Brasil",
         "CEP": "09865-350"
     },
     "usuario": {
-       "login": "ruthalmeida",
-       "senha": "senha123",
-       "nome": "Ruth Almeida",
-       "tipoUsuario": "CLIENTE"
+        "id": 3,
+        "login": "ruthalmeida",
+        "senha": "senha123",
+        "nome": "Ruth Almeida",
+        "tipoUsuario": "CLIENTE"
     }   
 }
