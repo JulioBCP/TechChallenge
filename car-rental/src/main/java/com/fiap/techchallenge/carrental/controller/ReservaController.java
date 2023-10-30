@@ -1,6 +1,7 @@
 package com.fiap.techchallenge.carrental.controller;
 
 import java.net.URI;
+import java.util.NoSuchElementException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +23,7 @@ import com.fiap.techchallenge.carrental.entity.Reserva;
 import com.fiap.techchallenge.carrental.service.CadastroReservaService;
 
 @RestController
-@RequestMapping(value = "/Reservas")
+@RequestMapping(value = "/reservas")
 public class ReservaController {
 
     @Autowired
@@ -52,6 +53,9 @@ public class ReservaController {
         try {
             reservaService.deletarReserva(id);
             LOGGER.info("Reserva {} eliminada com sucesso!", id);
+        } catch (NoSuchElementException e) {
+            LOGGER.error("Reserva não encontrada {}!", id);
+            return new ResponseEntity<>("Reserva " + id + " não encontrada.", HttpStatus.NOT_FOUND);
         } catch (Exception e) {
             LOGGER.error("Não foi possível eliminar a reserva {}!", id);
             return new ResponseEntity<>("Não foi possível eliminar a reserva!", HttpStatus.INTERNAL_SERVER_ERROR);
