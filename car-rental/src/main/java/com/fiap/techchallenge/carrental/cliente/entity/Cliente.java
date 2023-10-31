@@ -32,6 +32,9 @@ public class Cliente {
    @Column(nullable = false)
    private LocalDate dataNascimento;
 
+   @Column(nullable = false)
+   private String email;
+
    @Enumerated(EnumType.STRING)
    private SexoEnum sexo;
 

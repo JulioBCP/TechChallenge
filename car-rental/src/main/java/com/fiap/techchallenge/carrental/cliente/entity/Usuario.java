@@ -18,7 +18,6 @@ import lombok.Setter;
 
 @Entity(name = "usuario")
 @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
-
 public class Usuario {
 
    @Id
