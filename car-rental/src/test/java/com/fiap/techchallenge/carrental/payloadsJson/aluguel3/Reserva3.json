@@ -2,6 +2,7 @@
    "cliente": {
       "numeroCnh": 52356403817,
       "dataNascimento": "1998-09-21",
+      "email": "robertojose@email.com",
       "sexo": "MASCULINO",
       "cpf": 52356403817,
       "telefone": 11964025402,

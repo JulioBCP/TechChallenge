@@ -8,6 +8,7 @@
          "cliente": {
             "numeroCnh": 13621711821,
             "dataNascimento": "1990-01-15",
+            "email": "jorgefarias@email.com",
             "sexo": "MASCULINO",
             "cpf": 13621711821,
             "telefone": 11995571720,

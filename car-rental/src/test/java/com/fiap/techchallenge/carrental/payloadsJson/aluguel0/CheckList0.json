@@ -8,6 +8,7 @@
             "cliente": {
                 "numeroCnh": 12345,
                 "dataNascimento": "1990-01-15",
+                "email": "joaodoe@email.com",
                 "sexo": "MASCULINO",
                 "CPF": 12345678901,
                 "telefone": 987654321,

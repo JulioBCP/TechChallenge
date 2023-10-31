@@ -1,6 +1,7 @@
 {
    "numeroCnh": 12345678910,
    "dataNascimento": "1990-01-15",
+   "email": "joaodoe@email.com",
    "sexo": "MASCULINO",
    "cpf": 12345678910,
    "telefone": 19998765362,
