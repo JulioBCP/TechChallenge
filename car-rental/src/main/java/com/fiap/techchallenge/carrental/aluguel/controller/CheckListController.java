@@ -53,7 +53,7 @@ public class CheckListController {
       return ResponseEntity.ok().body(checkListService.alterarCheckList(checkListDTO, id));
    }
 
-   @DeleteMapping
+   @DeleteMapping("/{id}")
    public ResponseEntity<String> deletarCheckList(@PathVariable long id) {
       try {
          checkListService.deletarCheckList(id);
