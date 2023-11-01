@@ -34,6 +34,8 @@ public class ReservaController {
         reservaService.inserirReserva(reserva);
 
         URI location = builder.path("reservas/{id}").buildAndExpand(reserva.getId()).toUri();
+        LOGGER.info("Reserva de id {} criada com sucesso!", reserva.getId());
+
         return ResponseEntity.created(location).body(reserva);
     }
 
@@ -44,6 +46,8 @@ public class ReservaController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Reserva> atualizarReserva(@PathVariable long id, @RequestBody AtualizarReservaDTO dto) {
+
+        LOGGER.info("Reserva de id {} alterada com sucesso!", id);
         return ResponseEntity.ok().body(reservaService.alterarReserva(dto, id));
     }
 
