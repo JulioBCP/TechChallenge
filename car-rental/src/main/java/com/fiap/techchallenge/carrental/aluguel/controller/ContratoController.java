@@ -28,11 +28,13 @@ public class ContratoController {
     private static final Logger LOGGER = LoggerFactory.getLogger(ContratoController.class);
 
     @PostMapping
-    public ResponseEntity<Contrato> inserirContrato(@RequestBody Contrato Contrato, UriComponentsBuilder builder) {
-        contratoService.inserirContrato(Contrato);
+    public ResponseEntity<Contrato> inserirContrato(@RequestBody Contrato contrato, UriComponentsBuilder builder) {
+        contratoService.inserirContrato(contrato);
 
-        URI location = builder.path("contratos/{id}").buildAndExpand(Contrato.getId()).toUri();
-        return ResponseEntity.created(location).body(Contrato);
+        URI location = builder.path("contratos/{id}").buildAndExpand(contrato.getId()).toUri();
+        LOGGER.info("Contrato de id {} gerado com sucesso!", contrato.getId());
+
+        return ResponseEntity.created(location).body(contrato);
     }
 
     @GetMapping("/{id}")

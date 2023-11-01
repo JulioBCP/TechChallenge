@@ -34,6 +34,8 @@ public class VeiculoController {
         veiculoService.inserirVeiculo(veiculo);
 
         URI location = builder.path("veiculos/{id}").buildAndExpand(veiculo.getId()).toUri();
+        LOGGER.info("Veiculo de id {} cadastrado com sucesso!", veiculo.getId());
+
         return ResponseEntity.created(location).body(veiculo);
     }
 
@@ -44,6 +46,8 @@ public class VeiculoController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Veiculo> atualizarVeiculo(@PathVariable long id, @RequestBody AtualizarVeiculoDTO dto) {
+
+        LOGGER.info("Veiculo de id {} alterado com sucesso!", id);
         return ResponseEntity.ok().body(veiculoService.alterarVeiculo(dto, id));
     }
 
