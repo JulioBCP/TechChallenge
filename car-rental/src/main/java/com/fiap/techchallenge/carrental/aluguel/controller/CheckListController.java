@@ -35,7 +35,7 @@ public class CheckListController {
       checkListService.inserirCheckList(checkList);
 
       URI location = builder.path("checkLists/{id}").buildAndExpand(checkList.getId()).toUri();
-      LOGGER.info("CheckList de id {} criado com sucesso!", checkList.getId());
+      LOGGER.info("CheckList de id {} preenchido com sucesso!", checkList.getId());
 
       return ResponseEntity.created(location).body(checkList);
    }
