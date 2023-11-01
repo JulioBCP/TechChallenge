@@ -1,0 +1,48 @@
+{
+   "cliente": {
+    "numeroCnh": 12345678910,
+    "dataNascimento": "1990-01-15",
+    "email": "joaodoe@email.com",
+    "sexo": "MASCULINO",
+    "cpf": 12345678910,
+    "telefone": 19998765362,
+    "endereco": {
+        "rua": "Rua das Flores",
+        "numero": "123",
+        "bairro": "Centro",
+        "cidade": "Cidade",
+        "estado": "UF",
+        "pais": "Brasil",
+        "CEP": "12345-678"
+    },
+    "usuario": {
+        "id": 1,
+        "login": "joaodoe",
+        "senha": "senha123",
+        "nome": "João da Silva",
+        "tipoUsuario": "CLIENTE"
+    }
+ },
+   "veiculo": {
+   "id": 1,
+   "tipoVeiculo": "HATCH",
+   "marca": "TOYOTA",
+   "modelo": "Corolla",
+   "anomodelo": 2022,
+   "anoFabricacao": 2021,
+   "km": 15500,
+   "kmManutencao": 14000,
+   "motor": "2.0L 4 cilindros",
+   "cor": "Prata",
+   "tracao": "T4X2",
+   "arCondicionado": true,
+   "trioEletrico": true,
+   "tetoSolar": false,
+   "combustivel": "GASOLINA",
+   "cabineDupla": false,
+   "capacidadeCarga": "500 kg"
+   },
+   "valorReserva": 1300.0,
+   "dataInicio": "2023-01-15",
+   "dataFim": "2023-01-20"
+}

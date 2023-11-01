@@ -1,0 +1,18 @@
+{
+   "tipoVeiculo": "SEDAN",
+   "marca": "CHEVROLET",
+   "modelo": "Onix",
+   "anomodelo": 2020,
+   "anoFabricacao": 2020,
+   "km": 35300,
+   "kmManutencao": 40000,
+   "motor": "1.6L 4 cilindros",
+   "cor": "Branco",
+   "tracao": "T4X2",
+   "arCondicionado": true,
+   "trioEletrico": true,
+   "tetoSolar": false,
+   "combustivel": "FLEX",
+   "cabineDupla": false,
+   "capacidadeCarga": "550 kg"
+}

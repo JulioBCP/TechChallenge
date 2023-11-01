@@ -1,0 +1,48 @@
+{
+   "cliente": {
+        "numeroCnh": 13621711821,
+        "dataNascimento": "1990-01-15",
+        "email": "jorgefarias@email.com",
+        "sexo": "MASCULINO",
+        "cpf": 13621711821,
+        "telefone": 11995571720,
+        "endereco": {
+          "rua": "Rua Benedito Medezzene",
+          "numero": "137",
+          "bairro": "Pq das Flores I",
+          "cidade": "São Bernardo do Campo",
+          "estado": "SP",
+          "pais": "Brasil",
+          "CEP": "09845-320"
+        },
+        "usuario": {
+          "id": 2,
+          "login": "jorgefarias",
+          "senha": "senha123",
+          "nome": "Jorge Farias",
+          "tipoUsuario": "CLIENTE"
+        }   
+    },
+    "veiculo": {
+      "id": 2,
+      "tipoVeiculo": "HATCH",
+      "marca": "VOLKSWAGEN",
+      "modelo": "Polo",
+      "anomodelo": 2015,
+      "anoFabricacao": 2016,
+      "km": 65500,
+      "kmManutencao": 70000,
+      "motor": "2.0L 4 cilindros",
+      "cor": "Chumbo",
+      "tracao": "T4X2",
+      "arCondicionado": true,
+      "trioEletrico": true,
+      "tetoSolar": false,
+      "combustivel": "FLEX",
+      "cabineDupla": false,
+      "capacidadeCarga": "500 kg"
+    },
+    "valorReserva": 1400.0,
+    "dataInicio": "2023-01-23",
+    "dataFim": "2023-01-30"
+}

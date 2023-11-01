@@ -1,0 +1,18 @@
+{
+   "tipoVeiculo": "ESPORTIVO",
+   "marca": "AUDI",
+   "modelo": "TT",
+   "anomodelo": 2022,
+   "anoFabricacao": 2022,
+   "km": 11600,
+   "kmManutencao": 20000,
+   "motor": "2.5 de cinco cilindros em linha",
+   "cor": "Nardo Gray",
+   "tracao": "T4X2",
+   "arCondicionado": true,
+   "trioEletrico": true,
+   "tetoSolar": false,
+   "combustivel": "GASOLINA",
+   "cabineDupla": false,
+   "capacidadeCarga": "400 kg"
+}

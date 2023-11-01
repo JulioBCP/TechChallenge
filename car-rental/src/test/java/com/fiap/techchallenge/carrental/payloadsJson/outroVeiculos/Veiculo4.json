@@ -1,0 +1,18 @@
+{
+   "tipoVeiculo": "SUV",
+   "marca": "JEEP",
+   "modelo": "Compass",
+   "anomodelo": 2023,
+   "anoFabricacao": 2023,
+   "km": 15200,
+   "kmManutencao": 20000,
+   "motor": "2.0L Turbo Rampage",
+   "cor": "Preto Carbon",
+   "tracao": "T4X4",
+   "arCondicionado": true,
+   "trioEletrico": true,
+   "tetoSolar": true,
+   "combustivel": "FLEX",
+   "cabineDupla": false,
+   "capacidadeCarga": "850 kg"
+}
